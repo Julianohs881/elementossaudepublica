@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz sobre Nutrição Humana</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -23,7 +24,7 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
+            max-width: 600px;
             width: 100%;
             margin-bottom: 20px;
         }
@@ -68,7 +69,12 @@
         .feedback {
             font-size: 18px;
             margin-top: 10px;
-            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .feedback.visible {
+            opacity: 1;
         }
 
         .feedback.correct {
@@ -95,195 +101,527 @@
 
         @media (max-width: 600px) {
             .quiz-container {
-                padding: 15px;
+                padding: 10px;
             }
             .answers button {
                 font-size: 14px;
+                padding: 8px;
+            }
+            .print-btn {
+                padding: 8px 16px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Quiz 1 -->
     <div class="quiz-container">
-        <h2>1. 1-Os esteróis são considerados uma categoria especial de lipídeos. São componentes insolúveis em água e com baixa solubilidade em óleo, sendo encontrados em diversos seres vivos. O colesterol é o esterol mais conhecido e grande importância na saúde.
-Fonte: MAHAN, L. K.; ESCOTT-STUMP, S. ; RAYMOND, J.L. Krause: Alimentos, Nutrição e Dietoterapia. 13ª ed. Rio de Janeiro: Elsevier, 2013.
- Considerando as funções metabólicas associadas ao colesterol, avalie as asserções a seguir e a relação proposta entre elas.
-
-Avalie as asserções sobre o colesterol e os níveis de lipoproteínas no organismo:</h2>
-        <p>I. No organismo humano, o colesterol é utilizado como matéria-prima para a produção de hormônios esteroides e sais biliares.</p>
-        <p>II. Níveis elevados de lipoproteínas na corrente sanguínea, podem representar riscos à saúde, especialmente de infarto.</p>
-        <p><strong>A respeito dessas asserções, assinale a opção correta:</strong></p>
-
-        <div class="answers">
-            <button onclick="checkAnswer(this, false)">A. As asserções I e II são proposições falsas.</button>
-            <button onclick="checkAnswer(this, true)">B. As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.</button>
-            <button onclick="checkAnswer(this, false)">C. As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.</button>
-            <button onclick="checkAnswer(this, false)">D. A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.</button>
-            <button onclick="checkAnswer(this, false)">E. A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.</button>
-        </div>
-
-        <p class="feedback"></p>
+    <h2>
+        01-O consumo de alimentos fritos vem crescendo nos últimos anos, sua ingestão pode se tornar perigosa quando no preparo são utilizados óleos de má qualidade. Durante a fritura por imersão de alimentos, podem ocorrer diversas alterações físicas e químicas no óleo, influenciando nos produtos destinados ao consumo. Diante disto, torna-se importante analisar a qualidade dos óleos utilizados para frituras em Unidades Produtoras de Refeições.
+        <br><br>
+        Fonte: DIJULI, Deise Aparecida da Silva et al. Processos de fritura em escala laboratorial e industrial para estabelecer procedimentos de boas práticas. 2021. Dissertação de Mestrado. Universidade Tecnológica Federal do Paraná.
+        <br><br>
+        Considerando o assunto e os estudos sobre óleos e gorduras na técnica e dietética, assinale a alternativa correta.
+    </h2>
+    
+    <div class="answers">
+        <button data-correct="false">1. Os óleos e as gorduras são sólidos à temperatura ambiente.</button>
+        <button data-correct="false">2. Durante o aquecimento em altas temperaturas, o glicerol é liberado em forma de fumaça branca.</button>
+        <button data-correct="false">3. Na fritura dos alimentos é indicada a escolha de um óleo com menor resistência a altas temperaturas.</button>
+        <button data-correct="false">4. O azeite de oliva de todos os tipos de gordura é o que possui a maior temperatura do ponto de fumaça no tempo de 7 minutos de aquecimento.</button>
+        <button data-correct="true">5. A fumaça branca e densa liberada na hidrólise das gorduras pode ser observada a olho nu e esta alteração física é conhecida como ponto de fumaça.</button>
     </div>
 
-    <!-- Quiz 2 -->
+    <p class="feedback"></p>
+</div>
+
     <div class="quiz-container">
-        <h2>2. Os carboidratos fornecem a maior parte da energia necessária para manutenção das atividades das pessoas. A ingestão diária recomendada de carboidratos é de 50% a 60% do valor calórico total. Eles são encontrados nos amidos e açúcares e, com exceção da lactose do leite e do glicogênio do tecido animal, são de origem vegetal. São classificados em simples e complexos.Glicose, frutose, sacarose e lactose são os carboidratos simples mais encontrados nos alimentos, estando o amido entre os complexos".
-Os carboidratos são divididos em quatro tipos de estruturas: os monossacarideos, dissacarideos, oligossacarideos e os polissacarideosanalise
-De acordo com as classificações dos carboidratos, avalie as asserções:</h2>
-        <p>I. Os monossacarídeos são representados pela fórmula Cn (H2O)n. Sendo classificados como estruturas simples.</p>
-        <p>II. Em reações de oxirredução, a ligação entre carbonos é quebrada para produzir ácido carboxílico (COOH), fornecendo energia ao organismo.</p>
-        <p><strong>A respeito dessas asserções, assinale a opção correta:</strong></p>
-
-        <div class="answers">
-            <button onclick="checkAnswer(this, false)">A. As asserções I e II são verdadeiras, e a II é uma justificativa correta da I.</button>
-            <button onclick="checkAnswer(this, true)">B. As asserções I e II são verdadeiras, mas a II não é uma justificativa correta da I.</button>
-            <button onclick="checkAnswer(this, false)">C. A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.</button>
-            <button onclick="checkAnswer(this, false)">D. As asserções I e II são falsas.</button>
-            <button onclick="checkAnswer(this, false)">E. A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.</button>
-        </div>
-
-        <p class="feedback"></p>
+    <h2>
+       02- A transição nutricional no Brasil é caracterizada por uma mudança significativa nos padrões alimentares e no estado nutricional da população. Essa mudança é marcada pelo aumento do consumo de alimentos processados e ultraprocessados e por um estilo de vida mais sedentário, resultando em uma prevalência crescente de obesidade. Além disso, a partir da década de 2000, várias políticas públicas foram implementadas para enfrentar a insegurança alimentar e nutricional.
+        <br><br>
+        Fonte: UCHIDA, N. S. Elementos da saúde pública. Indaial: Arqué, 2023.
+        <br><br>
+        Sobre as políticas de segurança alimentar e nutricional no Brasil, assinale a alternativa correta:
+    </h2>
+    
+    <div class="answers">
+        <button data-correct="false">1. O Programa Fome Zero foi implementado com o objetivo de promover o consumo de alimentos ultraprocessados na dieta brasileira.</button>
+        <button data-correct="false">2. O Programa de Alimentação do Trabalhador (PAT) é o principal programa voltado para a segurança alimentar e nutricional em nível internacional.</button>
+        <button data-correct="false">3. A Política Nacional de Segurança Alimentar e Nutricional (PNSAN) foi a primeira política pública a ser criada para enfrentar a fome e a pobreza no Brasil.</button>
+        <button data-correct="true">4. A Lei Orgânica de Segurança Alimentar e Nutricional (LOSAN) foi criada para fortalecer a segurança alimentar e nutricional no Sistema Único de Saúde (SUS).</button>
+        <button data-correct="false">5. A insegurança alimentar e nutricional no Brasil foi abordada somente a partir da década de 2000, com a implementação do Programa Nacional de Alimentação do Escolar (PNAE).</button>
     </div>
 
-    <!-- Quiz 3 -->
+    <p class="feedback"></p>
+</div>
+
     <div class="quiz-container">
-        <h2>3. Sobre a ausência de uma substância, o corpo utiliza a segunda fonte de energia. Assinale a correta:</h2>
-        <div class="answers">
-            <button onclick="checkAnswer(this, false)">A. Os minerais.</button>
-            <button onclick="checkAnswer(this, false)">B. A gordura.</button>
-            <button onclick="checkAnswer(this, true)">C. A glicose.</button>
-            <button onclick="checkAnswer(this, false)">D. Os lipídios.</button>
-            <button onclick="checkAnswer(this, false)">E. As vitaminas.</button>
-        </div>
-        <p class="feedback"></p>
+    <h2>
+       03- A sustentabilidade ambiental está fortemente ligada à produção e ao consumo de alimentos. A agricultura familiar tem sido destacada como uma prática sustentável que pode contribuir significativamente para a preservação ambiental e para a segurança alimentar e nutricional. Além disso, a educação alimentar e nutricional desempenha um papel fundamental na promoção de hábitos alimentares saudáveis e na conscientização sobre o impacto ambiental das escolhas alimentares.
+        <br><br>
+        Fonte: BRASIL. Ministério da Educação. Programa Nacional de Alimentação Escolar (PNAE): alimentação escolar e agricultura familiar. Brasília, DF: MEC; FNDE, 2020.
+        <br><br>
+        Com base nessas informações, analise as afirmativas a seguir:
+        <br><br>
+        I. A agricultura familiar é uma prática que pode contribuir para a sustentabilidade ambiental, pois promove o uso racional dos recursos naturais.<br>
+        II. A educação alimentar e nutricional nas escolas é importante para a conscientização sobre o impacto ambiental das escolhas alimentares.<br>
+        III. O consumo de alimentos ultraprocessados tem impacto positivo na preservação ambiental devido à sua alta durabilidade.
+        <br><br>
+        É correto o que se afirma em:
+    </h2>
+    
+    <div class="answers">
+        <button data-correct="false">1. I, apenas.</button>
+        <button data-correct="false">2. II, apenas.</button>
+        <button data-correct="false">3. III, apenas.</button>
+        <button data-correct="true">4. I e II, apenas.</button>
+        <button data-correct="false">5. I, II e III.</button>
     </div>
 
-    <!-- Quiz 4 -->
+    <p class="feedback"></p>
+</div>
+
     <div class="quiz-container">
-        <h2>4. Sobre a qualidade das dietas, de acordo com a funcionalidade, avalie as afirmativas:</h2>
-        <p>I. A proporção dos grupos alimentares em cada refeição.</p>
-        <p>II. A variedade de alimentos presentes em cada refeição.</p>
-        <p>III. A necessidade energética recomendada deve ser suprida.</p>
-        <p>IV. A avaliação da qualidade das dietas deve analisar a oferta de nutrientes.</p>
-        <div class="answers">
-            <button onclick="checkAnswer(this, false)">A. III e IV, apenas.</button>
-            <button onclick="checkAnswer(this, false)">B. II e IV, apenas.</button>
-            <button onclick="checkAnswer(this, false)">C. I, apenas.</button>
-            <button onclick="checkAnswer(this, false)">D. I, II e III, apenas.</button>
-            <button onclick="checkAnswer(this, true)">E. I, II, III e IV.</button>
-        </div>
-        <p class="feedback"></p>
+    <h2>
+      04-  A Política Nacional de Alimentação e Nutrição (PNAN), aprovada pela Portaria nº 710, de 10 de junho de 1999, atualizada em 2011 pela Portaria nº 2.715, de 17 de novembro de 2011, está regulamentada pela Coordenação Geral de Alimentação e Nutrição do Departamento de Atenção Básica do Ministério da Saúde, e pode ser considerada “fruto” de um processo histórico de conformação das políticas de saúde e de alimentação e nutrição no Brasil.
+        <br><br>
+        ​Fonte: BRASIL. Ministério da Saúde. Política nacional de alimentação e nutrição. 1. ed. Brasília, DF: MS, 2013.
+        <br><br>
+        ​Qual é o objetivo principal da PNAN, conforme descrito na política?
+    </h2>
+    
+    <div class="answers">
+        <button data-correct="false">1. Reduzir o consumo de alimentos in natura.</button>
+        <button data-correct="false">2. Promover a produção de alimentos de baixa qualidade.</button>
+        <button data-correct="false">3. Garantir o acesso universal a alimentos ultraprocessados.</button>
+        <button data-correct="false">4. Aumentar a dependência de produtos alimentares importados.</button>
+        <button data-correct="true">5. Melhorar as condições de alimentação, nutrição e saúde da população brasileira.</button>
     </div>
 
-    <!-- Quiz 5 -->
+    <p class="feedback"></p>
+</div>
+
     <div class="quiz-container">
-        <h2>5. Sobre a definição correta de taxa metabólica basal (TMB), assinale a alternativa correta:</h2>
-        <div class="answers">
-            <button onclick="checkAnswer(this, false)">A. Quantidade de energia para uma refeição completa.</button>
-            <button onclick="checkAnswer(this, true)">B. Energia gasta durante repouso físico e mental.</button>
-            <button onclick="checkAnswer(this, false)">C. Energia para atividades intensas.</button>
-            <button onclick="checkAnswer(this, false)">D. Energia durante o sono profundo.</button>
-            <button onclick="checkAnswer(this, false)">E. Energia para atividades físicas moderadas.</button>
-        </div>
-        <p class="feedback"></p>
+    <h2>
+       05- As mudanças ocorridas no perfil epidemiológico nutricional da população brasileira foram um fator de extrema relevância para a inserção do componente alimentação e nutrição na atenção básica (AB). Até 2008, a inserção do profissional na AB ficava a cargo dos gestores, que se sensibilizaram sobre a importância do nutricionista nesse âmbito.
+        <br><br>
+        Fonte: UCHIDA, N. S. Elementos da saúde pública. Indaial: Arqué, 2023.
+        <br><br>
+        Considerando as informações apresentadas, avalie as asserções a seguir e a relação proposta entre elas:
+        <br><br>
+        I. O NASF foi criado para apoiar a ESF com a inclusão de mais profissionais da saúde, e para promover ações integrativas e intersetoriais.<br><br>
+        PORQUE<br><br>
+        II. A principal função do NASF é garantir que a ESF tenha mais autonomia financeira e administrativa, facilitando a implementação de programas de saúde.
+        <br><br>
+        A respeito dessas asserções, assinale a opção correta:
+    </h2>
+    
+    <div class="answers">
+        <button data-correct="false">1. As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.</button>
+        <button data-correct="false">2. As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.</button>
+        <button data-correct="true">3. A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.</button>
+        <button data-correct="false">4. A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.</button>
+        <button data-correct="false">5. As asserções I e II são proposições falsas.</button>
     </div>
 
-    <!-- Quiz 6 -->
+    <p class="feedback"></p>
+</div>
+
     <div class="quiz-container">
-        <h2>6. Sobre o consumo de gordura insaturada e seus efeitos:</h2>
-        <p>I. O consumo de gordura insaturada deve ser limitado a 10% da ingestão de lipídios.</p>
-        <p>II. O consumo de gordura insaturada está relacionado ao aumento do HDL-colesterol, protetor da saúde cardiovascular.</p>
-        <div class="answers">
-            <button onclick="checkAnswer(this, false)">A. Asserções I e II são verdadeiras, e a II justifica a I.</button>
-            <button onclick="checkAnswer(this, false)">B. Asserções I e II são falsas.</button>
-            <button onclick="checkAnswer(this, true)">C. Asserção I é falsa, e a II é verdadeira.</button>
-            <button onclick="checkAnswer(this, false)">D. Asserções I e II são verdadeiras, mas a II não justifica a I.</button>
-            <button onclick="checkAnswer(this, false)">E. Asserção I é verdadeira, e a II é falsa.</button>
-        </div>
-        <p class="feedback"></p>
+    <h2>
+      06-  No Brasil, a abordagem para a prevenção e controle de deficiências nutricionais envolve várias estratégias e programas governamentais. Tais políticas são implementadas para reduzir a prevalência de deficiências e melhorar o estado nutricional da população. Entre os programas conhecidos estão o Programa Nacional de Suplementação de Ferro (PNSF) e o Programa Nacional de Suplementação de Vitamina A (PNSVA).
+        <br><br>
+        Fonte: UCHIDA, N. S. Elementos da saúde pública. Indaial: Arqué, 2023.
+        <br><br>
+        Com base nessas informações, avalie as asserções a seguir e a relação proposta entre elas:
+        <br><br>
+        I. O Programa Nacional de Suplementação de Ferro (PNSF) é voltado para a prevenção de anemia ferropriva, e abrange a suplementação de ferro para crianças, gestantes e mulheres no pós-parto.<br><br>
+        PORQUE<br><br>
+        II. A suplementação de vitamina A é recomendada apenas para lactentes e crianças menores de 5 anos, sem considerar a necessidade de suplementação para gestantes ou mulheres no pós-parto.
+        <br><br>
+        A respeito dessas asserções, assinale a opção correta:
+    </h2>
+    
+    <div class="answers">
+        <button data-correct="false">1. As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.</button>
+        <button data-correct="false">2. As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.</button>
+        <button data-correct="true">3. A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.</button>
+        <button data-correct="false">4. A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.</button>
+        <button data-correct="false">5. As asserções I e II são proposições falsas.</button>
     </div>
 
-    <!-- Quiz 7 -->
+    <p class="feedback"></p>
+</div>
+
     <div class="quiz-container">
-        <h2>7. Sobre os sintomas de desidratação, quais estão corretos?</h2>
-        <div class="answers">
-            <button onclick="checkAnswer(this, false)">A. Flatulência, sonolência, irritabilidade.</button>
-            <button onclick="checkAnswer(this, false)">B. Irritabilidade e dor de cabeça.</button>
-            <button onclick="checkAnswer(this, true)">C. Sonolência, irritabilidade e dor de cabeça.</button>
-            <button onclick="checkAnswer(this, false)">D. Sonolência e irritabilidade.</button>
-            <button onclick="checkAnswer(this, false)">E. Flatulência e dor de cabeça.</button>
-        </div>
-        <p class="feedback"></p>
+    <h2>
+      07-  Conforme o Guia Alimentar para a População Brasileira, os alimentos são classificados em quatro categorias principais, com base no tipo de processamento. Essa classificação é essencial para promover uma alimentação adequada e saudável e para orientar a escolha de alimentos em diversas situações. As categorias são:
+        <br><br>
+        - Alimentos in natura ou minimamente processados.<br>
+        - Ingredientes culinários.<br>
+        - Alimentos processados.<br>
+        - Alimentos ultraprocessados.<br><br>
+        Segundo o Guia, a promoção da alimentação adequada envolve não apenas a escolha de alimentos in natura ou minimamente processados, mas também a compreensão das diferenças entre os tipos de alimentos e seus impactos na saúde.
+        <br><br>
+        Fonte: BRASIL. Ministério da Saúde. Guia alimentar para a população brasileira. 2. ed. Brasília, DF: MS, 2014.
+        <br><br>
+        Considerando as informações apresentadas, avalie as asserções a seguir e a relação proposta entre elas:
+        <br><br>
+        I. Os alimentos in natura ou minimamente processados são aqueles obtidos diretamente de plantas ou animais, e não sofrem alterações significativas após a colheita ou abate.<br><br>
+        PORQUE<br><br>
+        II. A classificação dos alimentos em ultraprocessados é feita com base na adição de substâncias como açúcar, gorduras e aditivos industriais que não estão presentes nos alimentos in natura ou minimamente processados.
+        <br><br>
+        A respeito dessas asserções, assinale a opção correta:
+    </h2>
+    
+    <div class="answers">
+        <button data-correct="true">1. As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.</button>
+        <button data-correct="false">2. As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.</button>
+        <button data-correct="false">3. A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.</button>
+        <button data-correct="false">4. A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.</button>
+        <button data-correct="false">5. As asserções I e II são proposições falsas.</button>
     </div>
 
-    <!-- Quiz 8 -->
+    <p class="feedback"></p>
+</div>
+
     <div class="quiz-container">
-        <h2>8. Sobre a Lei da Harmonia na alimentação de Pedro Escudero:</h2>
-        <p>I. Preconiza a distribuição proporcional de nutrientes.</p>
-        <p>II. Destaca a importância de variar o planejamento alimentar com ampla variedade de alimentos.</p>
-        <div class="answers">
-            <button onclick="checkAnswer(this, false)">A. II apenas.</button>
-            <button onclick="checkAnswer(this, false)">B. III apenas.</button>
-            <button onclick="checkAnswer(this, false)">C. I apenas.</button>
-            <button onclick="checkAnswer(this, true)">D. I e II apenas.</button>
-            <button onclick="checkAnswer(this, false)">E. I, II e III.</button>
-        </div>
-        <p class="feedback"></p>
+    <h2>
+      08-  A Política Nacional de Alimentação e Nutrição (PNAN) foi estabelecida para reorganizar e aperfeiçoar as ações para o enfrentamento da complexidade da situação alimentar e nutricional da população brasileira. Aprovada no ano de 1999, integra os esforços do Estado Brasileiro que, por meio de um conjunto de políticas públicas, propõe respeitar, proteger, promover e prover os direitos humanos à saúde e à alimentação. Já a vigilância alimentar e nutricional (VAN) consiste na descrição contínua e na predição de tendências das condições de alimentação e nutrição da população e seus fatores determinantes.
+        <br><br>
+        Fonte: UCHIDA, N. S. Elementos da saúde pública. Indaial: Arqué, 2023.
+        <br><br>
+        Com base nesse tema, assinale a alternativa correta:
+    </h2>
+    
+    <div class="answers">
+        <button data-correct="false">1. A PNAN visa apenas à promoção de práticas alimentares saudáveis, sem considerar a vigilância nutricional.</button>
+        <button data-correct="false">2. A VAN foi criada para monitorar exclusivamente doenças transmissíveis, sem abranger questões de alimentação e nutrição.</button>
+        <button data-correct="false">3. A VAN não é uma das diretrizes da PNAN, e seu objetivo principal não é fornecer informações contínuas sobre as condições nutricionais.</button>
+        <button data-correct="false">4. A PNAN estabelece que a VAN deve ser focada apenas na coleta de dados laboratoriais, desconsiderando a utilização de parâmetros antropométricos.</button>
+        <button data-correct="true">5. A VAN utiliza técnicas como a antropometria para coletar e analisar dados, fundamentais para o planejamento e monitoramento de ações em saúde pública.</button>
     </div>
 
-    <!-- Quiz 9 -->
+    <p class="feedback"></p>
+</div>
+
     <div class="quiz-container">
-        <h2>9. Qual o principal papel da vitamina E no organismo humano?</h2>
-        <div class="answers">
-            <button onclick="checkAnswer(this, false)">A. Regular os níveis de cálcio no sangue.</button>
-            <button onclick="checkAnswer(this, true)">B. Atuar como antioxidante.</button>
-            <button onclick="checkAnswer(this, false)">C. Aumentar a absorção de ferro.</button>
-            <button onclick="checkAnswer(this, false)">D. Estimular o crescimento muscular.</button>
-            <button onclick="checkAnswer(this, false)">E. Auxiliar na coagulação sanguínea.</button>
-        </div>
-        <p class="feedback"></p>
+    <h2>
+     09- O Programa Nacional de Prevenção e Controle dos Distúrbios por Deficiência de Iodo (PRÓ-IODO) foi criado em 2005, visando monitorar o teor de iodo do sal para consumo humano e implementar estratégias de divulgação e mobilização social. Além disso, a fortificação de farinhas de trigo e milho com ferro e ácido fólico visa reduzir a anemia ferropriva e problemas relacionados à má-formação do tubo neural. Com relação aos programas de suplementação, o Ministério da Saúde possui várias estratégias para prevenir deficiências de micronutrientes.
+        <br><br>
+        Fonte: UCHIDA, N. S. Elementos da saúde pública. Indaial: Arqué, 2023.
+        <br><br>
+        Considerando a fortificação de alimentos e os programas de suplementação no Brasil, assinale a alternativa correta:
+    </h2>
+    
+    <div class="answers">
+        <button data-correct="false">1. O PRÓ-IODO tem como uma de suas principais metas o monitoramento da adição de ferro ao sal para consumo humano.</button>
+        <button data-correct="true">2. O enriquecimento de farinhas de trigo e milho deve conter entre 140 e 220 mcg de ácido fólico, e entre 4 e 9 mg de ferro por 100 g.</button>
+        <button data-correct="false">3. A fortificação obrigatória de farinhas com ferro e ácido fólico é uma medida adotada para combater a deficiência de iodo na população.</button>
+        <button data-correct="false">4. O Programa Nacional de Suplementação de Vitamina A (PNSVA) é voltado para a prevenção da deficiência de vitamina A em adultos acima de 60 anos.</button>
+        <button data-correct="false">5. O Programa Nacional de Suplementação de Ferro (PNSF) recomenda a suplementação de ferro para todas as crianças, a partir de 24 meses de idade, e mulheres durante a lactação.</button>
     </div>
 
-    <!-- Quiz 10 -->
+    <p class="feedback"></p>
+</div>
+
     <div class="quiz-container">
-        <h2>10. Quais são as formas ativas da Vitamina A?</h2>
-        <div class="answers">
-            <button onclick="checkAnswer(this, false)">A. Oxigênio, oxirredução e retinol.</button>
-            <button onclick="checkAnswer(this, false)">B. Ácido retinoico, oxirredução e retinol.</button>
-            <button onclick="checkAnswer(this, false)">C. Cadeia de carbono, oxirredução e retinol.</button>
-            <button onclick="checkAnswer(this, true)">D. Retinol, retinal e ácido retinoico.</button>
-            <button onclick="checkAnswer(this, false)">E. Cadeia de carbono, retinal e ácido retinoico.</button>
-        </div>
-        <p class="feedback"></p>
+    <h2>
+      10-  O Programa Nacional de Alimentação Escolar (PNAE), estabelecido pela Lei nº 11.947/2009, é coordenado pelo Fundo Nacional de Desenvolvimento da Educação (FNDE) e representa uma peça fundamental na estrutura de apoio à educação no Brasil (BRASIL, 2009).
+        <br><br>
+        Fonte: BRASIL. Lei nº 11.947, de 16 de junho de 2009. Dispõe sobre o atendimento da alimentação escolar e do Programa Dinheiro Direto na Escola aos alunos da educação básica; altera as Leis nos 10.880, de 9 de junho de 2004, 11.273, de 6 de fevereiro de 2006, 11.507, de 20 de julho de 2007; revoga dispositivos da Medida Provisória no 2.178-36, de 24 de agosto de 2001, e a Lei no 8.913, de 12 de julho de 1994; e dá outras providências. Diário Oficial da União, Brasília, DF, 2009.
+        <br><br>
+        Com base nessas informações, assinale a alternativa correta que aponte a finalidade desse Programa.
+    </h2>
+    
+    <div class="answers">
+        <button data-correct="false">1. Ampliar, qualificar e humanizar a atenção integral à saúde da mulher e dos alunos no Sistema Único de Saúde.</button>
+        <button data-correct="false">2. Auxiliar na vigilância alimentar e nutricional, na prevenção e no cuidado integral dos agravos relacionados à alimentação e nutrição.</button>
+        <button data-correct="false">3. Melhorar as condições de alimentação, nutrição e saúde da população brasileira, mediante a promoção de práticas alimentares adequadas e saudáveis.</button>
+        <button data-correct="true">4. Ofertar uma alimentação adequada e saudável aos estudantes da educação básica das redes públicas federal, estadual, distrital e municipal, matriculados em escolas públicas, filantrópicas e em entidades comunitárias, contribuindo para o desenvolvimento físico e cognitivo dessa população.</button>
+        <button data-correct="false">5. Promover a melhoria das condições de vida e saúde das mulheres brasileiras, mediante a garantia de direitos legalmente constituídos e ampliação do acesso aos meios e serviços de promoção, prevenção, assistência e recuperação da saúde em todo território brasileiro.</button>
     </div>
 
-    <button class="print-btn" onclick="window.print()">Imprimir Quiz</button>
+    <p class="feedback"></p>
+</div>
+
+    <div class="quiz-container">
+    <h2>
+      11-  A prática do aleitamento materno é fundamental para a saúde materno-infantil. Além de contribuir para a redução das taxas de mortalidade infantil, a amamentação oferece benefícios adicionais para a mãe, como a prevenção do câncer de mama e uma maior facilidade para recuperar o peso após a gestação, tanto durante quanto após o período de amamentação (Uchida, 2023).
+        <br><br>
+        Fonte: UCHIDA, N. S. Elementos da Saúde Pública. Indaial, SC: Arqué, 2023.
+        <br><br>
+        Sobre o aleitamento materno, assinale a alternativa correta:
+    </h2>
+    
+    <div class="answers">
+        <button data-correct="false">1. A prática de aleitamento materno é desnecessária se a mãe estiver amamentando de forma intermitente e complementar.</button>
+        <button data-correct="false">2. A amamentação deve ser exclusiva até os seis meses e depois deve ser substituída por uma alimentação sólida até os dois anos.</button>
+        <button data-correct="false">3. A amamentação é recomendada apenas durante os primeiros três meses de vida para evitar a formação de alergias alimentares.</button>
+        <button data-correct="false">4. O aleitamento materno pode ser iniciado a qualquer momento após o nascimento e não é necessário seguir a recomendação de amamentação exclusiva.</button>
+        <button data-correct="true">5. O aleitamento materno deve ser realizado exclusivamente e em livre demanda até os seis meses e, após essa fase, complementado com uma alimentação saudável e equilibrada até os dois anos ou mais.</button>
+    </div>
+
+    <p class="feedback"></p>
+</div>
+
+    <div class="quiz-container">
+    <h2>
+     12-   A Rede Cegonha, instituída pela Portaria nº 1.459, é uma estratégia do Ministério da Saúde que visa garantir cuidados abrangentes para gestantes, puérperas e crianças. As ações incluem o planejamento familiar, o pré-natal de qualidade, e o acompanhamento do puerpério e desenvolvimento infantil. Essas ações têm implicações significativas para a saúde materno-infantil e para o acompanhamento pós-parto (Cavalcanti et al., 2013).
+        <br><br>
+        Fonte: CAVALCANTI, P. C. DA S.; GURGEL JUNIOR, G. D.; VACONCELOS, A. L. R. DE; GUERRERO, A. V. P. Um modelo lógico da Rede Cegonha. Physis: Revista De Saúde Coletiva, [S.l.], v. 23, n. 4, p. 1297–1316, 2013.
+        <br><br>
+        De acordo com essas informações, analise as assertivas a seguir:
+        <br><br>
+        ​I. A Rede Cegonha inclui visitas domiciliares na primeira semana após o parto, com foco na promoção do aleitamento materno.<br>
+        II. O acompanhamento do desenvolvimento infantil pela Rede Cegonha não contempla o suporte ao aleitamento materno e à alimentação complementar saudável.<br>
+        III. A estratégia da Rede Cegonha foi implementada para melhorar a qualidade do pré-natal e o acompanhamento do puerpério, assegurando também o direito ao nascimento seguro e ao desenvolvimento saudável das crianças.
+        <br><br>
+        É correto o que se afirma em:
+    </h2>
+    
+    <div class="answers">
+        <button data-correct="false">1. I, apenas.</button>
+        <button data-correct="false">2. II, apenas.</button>
+        <button data-correct="false">3. III, apenas.</button>
+        <button data-correct="true">4. I e III, apenas.</button>
+        <button data-correct="false">5. I, II e III.</button>
+    </div>
+
+    <p class="feedback"></p>
+</div>
+
+    <div class="quiz-container">
+    <h2>
+      13-  A alimentação é fator primordial na rotina diária da humanidade, não apenas por ser necessidade, mas principalmente porque a sua obtenção tornou-se um problema de saúde pública, uma vez que o excesso ou falta podem causar doenças. A disseminação do uso de diferentes tipos de alimentos entre os continentes se deve muito ao comércio e à introdução de plantas e animais domésticos em novas áreas (Uchida, 2023).
+        <br><br>
+        Fonte: UCHIDA, N. S. Elementos da Saúde Pública. Indaial, SC: Arqué, 2023.
+        <br><br>
+        Sobre os fatores que influenciam a alimentação e o estado nutricional de um indivíduo, assinale a alternativa correta:
+    </h2>
+    
+    <div class="answers">
+        <button data-correct="false">1. O estado nutricional é determinado exclusivamente pelos parâmetros antropométricos e bioquímicos, sem considerar aspectos sociais e culturais.</button>
+        <button data-correct="false">2. A análise do estado nutricional deve focar exclusivamente nos aspectos bioquímicos, desconsiderando os fatores sociais e culturais envolvidos na alimentação.</button>
+        <button data-correct="false">3. A adequação nutricional de um indivíduo é unicamente condicionada por seus hábitos alimentares pessoais e não por seu modo de vida ou condições socioeconômicas.</button>
+        <button data-correct="false">4. A alimentação de um indivíduo depende apenas dos hábitos de consumo alimentar, sem influência de fatores externos como acesso e disponibilidade de alimentos.</button>
+        <button data-correct="true">5. Os aspectos relacionados ao estado nutricional incluem não apenas fatores biológicos, mas também aspectos sociais, culturais e econômicos que afetam a forma como a alimentação é realizada.</button>
+    </div>
+
+    <p class="feedback"></p>
+</div>
+
+    <div class="quiz-container">
+    <h2>
+      14-  O conceito de ambiente alimentar é amplo e vem em constante evolução. Este pode ser definido como ambiente coletivo, físico, econômico, político e sociocultural, assim como pelas oportunidades e condições que influenciam as escolhas alimentares e de bebidas pela população e seu estado nutricional. O ambiente alimentar é ainda caracterizado por fatores que determinam o acesso aos alimentos e bebidas, como a quantidade, tipo e localização dos estabelecimentos que comercializam esses produtos. Além disso, também envolve as condições de aquisição e consumo pelos indivíduos (Uchida, 2023).
+        <br><br>
+        Fonte: UCHIDA, N. S. Elementos da Saúde Pública. Indaial, SC: Arqué, 2023.
+        <br><br>
+        Com base nesse assunto, assinale a alternativa correta que aponta como o ambiente alimentar pode influenciar o padrão alimentar da comunidade:
+    </h2>
+    
+    <div class="answers">
+        <button data-correct="false">1. O ambiente alimentar apenas influencia o padrão alimentar quando não existem estabelecimentos comerciais, como hipermercados, na área.</button>
+        <button data-correct="false">2. A presença de lanchonetes e redes fast-food em uma área geralmente promove um padrão alimentar mais saudável na comunidade local.</button>
+        <button data-correct="false">3. A localização de restaurantes populares e sacolões tem sido associada ao consumo de alimentos ultraprocessados e inadequados para a saúde.</button>
+        <button data-correct="true">4. A diversidade de estabelecimentos alimentares como supermercados e feiras-livres pode facilitar o acesso a alimentos saudáveis e adequados.</button>
+        <button data-correct="false">5. O ambiente alimentar tem pouca influência sobre o consumo de alimentos, uma vez que os hábitos alimentares são determinados exclusivamente por preferências individuais.</button>
+    </div>
+
+    <p class="feedback"></p>
+</div>
+
+    <div class="quiz-container">
+    <h2>
+      15-  O avanço progressivo das doenças crônicas não transmissíveis faz milhões de vítimas anualmente no mundo. Esse cenário não é diferente no Brasil, no qual as DCNT respondem por mais de 70% das causas de morte. Para enfrentar o crescimento das DCNT, diversas políticas públicas foram construídas contemplando, entre seus objetivos, o fortalecimento das ações de alimentação e nutrição como primordial para promover, prevenir e recuperar a saúde. Na Política Nacional de Alimentação e Nutrição (PNAN), do Ministério da Saúde, legitima-se a importância da Atenção Nutricional no Sistema Único de Saúde, pelo incentivo às ações que podem fomentar a inserção do nutricionista em equipamentos da Atenção Primária à Saúde (APS) (Uchida, 2023).
+        <br><br>
+        Fonte: UCHIDA, N. S. Elementos da Saúde Pública. Indaial, SC: Arqué, 2023.
+        <br><br>
+        De acordo com essas informações, analise as assertivas a seguir:
+        <br><br>
+        I. A avaliação alimentar e nutricional realizada na APS deve ser acompanhada de um diagnóstico preciso e de um plano de ação que contemple não apenas as necessidades nutricionais, mas também as condições ambientais e econômicas do usuário.<br>
+        II. Para a promoção da alimentação adequada e saudável na APS, é necessário que a infraestrutura e a organização das UBS estejam alinhadas com as práticas recomendadas, facilitando a implementação das estratégias de saúde pública e a superação de barreiras ao acesso às intervenções nutricionais.<br>
+        III. A abordagem individualizada na APS para a alimentação adequada e saudável exclui a consideração de fatores sociais e econômicos que afetem a adesão às recomendações nutricionais.
+        <br><br>
+        É correto o que se afirma em:
+    </h2>
+    
+    <div class="answers">
+        <button data-correct="false">1. I, apenas.</button>
+        <button data-correct="false">2. II, apenas.</button>
+        <button data-correct="false">3. III, apenas.</button>
+        <button data-correct="false">4. II e III, apenas.</button>
+        <button data-correct="true">5. I e II, apenas.</button>
+    </div>
+
+    <p class="feedback"></p>
+</div>
+
+    <div class="quiz-container">
+    <h2>
+     16-   Nas últimas décadas, o Brasil passou por diversas mudanças políticas, econômicas, sociais e culturais que evidenciaram transformações no modo de vida da população. A ampliação de políticas sociais na área de saúde, educação, trabalho e emprego e assistência social contribuiu para a redução das desigualdades sociais e permitiu que o País crescesse de forma inclusiva.
+        <br><br>
+        Fonte: BRASIL. Ministério da Saúde. Secretaria de Atenção à Saúde. Departamento de Atenção Básica. Guia alimentar para a população brasileira / Ministério da Saúde, Secretaria de Atenção à Saúde, Departamento de Atenção Básica. – 2. ed., 1. reimpr. – Brasília : Ministério da Saúde, 2014.
+        <br><br>
+        De acordo com essas informações, analise as assertivas a seguir:
+        <br><br>
+        I. A alimentação adequada e saudável é apenas focada na promoção da saúde, sem considerar aspectos de inclusão social e redução da pobreza.<br>
+        II. A promoção de práticas corporais e atividades físicas deve levar em conta a cultura local e adaptar os espaços públicos para incluir atividades como brincadeiras e danças.<br>
+        III. A segurança alimentar e nutricional é um componente crucial da alimentação adequada e saudável, buscando também garantir o direito humano à alimentação.
+        <br><br>
+        É correto o que se afirma em:
+    </h2>
+    
+    <div class="answers">
+        <button data-correct="false">1. I, apenas.</button>
+        <button data-correct="false">2. II, apenas.</button>
+        <button data-correct="false">3. III, apenas.</button>
+        <button data-correct="false">4. I e II, apenas.</button>
+        <button data-correct="true">5. II e III, apenas.</button>
+    </div>
+
+    <p class="feedback"></p>
+</div>
+
+    <div class="quiz-container">
+    <h2>
+    17-    Estudo realizado com profissionais de saúde brasileiros para explorar e descrever os desafios para o manejo da obesidade no SUS mostrou que as principais barreiras são a alta demanda por atendimento curativo e individual, a presença de comorbidades e a falta ou acesso insuficiente a materiais didáticos, qualificação profissional e falta de apoio (Lopes et al., 2021).
+        <br><br>
+        Fonte: LOPES, M. S. et al. Challenges for obesity management in a unified health system: the view of health professionals. Family Practice, [S.l.], v. 38, n. 1, p. 4-10, 2021.
+        <br><br>
+        De acordo com essas informações, analise as assertivas a seguir:
+        <br><br>
+        I. A avaliação do estado nutricional é feita após a implementação da dietoterapia para ajustar o plano de ação nutricional.<br>
+        II. O aconselhamento nutricional deve englobar conceitos básicos de saúde e alimentação e é uma parte importante da atenção nutricional.<br>
+        III. A eficiência da intervenção nutricional deve ser avaliada para garantir que a dietoterapia esteja atendendo às necessidades do paciente.
+        <br><br>
+        É correto o que se afirma em:
+    </h2>
+    
+    <div class="answers">
+        <button data-correct="false">1. I, apenas.</button>
+        <button data-correct="false">2. II, apenas.</button>
+        <button data-correct="false">3. III, apenas.</button>
+        <button data-correct="false">4. I e II, apenas.</button>
+        <button data-correct="true">5. II e III, apenas.</button>
+    </div>
+
+    <p class="feedback"></p>
+</div>
+
+    <div class="quiz-container">
+    <h2>
+      18-  “A Agência Nacional de Vigilância Sanitária (Anvisa) determinou recentemente a retirada de três produtos alimentícios das prateleiras em todo o país. Os itens, amplamente consumidos pelos brasileiros, incluem sal, manteiga e fígado de frango. A decisão foi tomada após análises laboratoriais que apontaram contaminações e outras irregularidades em lotes específicos desses produtos. Os consumidores que utilizaram esses produtos reportaram sintomas preocupantes, como vômito, febre e diarreia, sugerindo possíveis casos de intoxicação alimentar. A rápida identificação dos problemas e a pronta intervenção da Anvisa foram essenciais para prevenir complicações mais graves. A agência, responsável por garantir a segurança alimentar no Brasil, destacou a importância de retirar os lotes contaminados do mercado imediatamente..." (Campos, 2024, on-line).
+        <br><br>
+        Fonte: <a href="https://www.noticiadamanha.com.br/2024/09/04/noticias/anvisa-3-produtos/" target="_blank">https://www.noticiadamanha.com.br/2024/09/04/noticias/anvisa-3-produtos/</a>. Acesso em: 6 set. 2024.​
+        <br><br>
+        Sobre as doenças relacionadas ao consumo de alimentos contaminados, assinale a alternativa correta:
+    </h2>
+    
+    <div class="answers">
+        <button data-correct="false">1. As intoxicações alimentares são provocadas apenas por microrganismos vivos presentes nos alimentos.</button>
+        <button data-correct="false">2. As doenças alimentares relacionadas a toxinas ou microrganismos não são chamadas de intoxicações alimentares.</button>
+        <button data-correct="false">3. As intoxicações alimentares ocorrem quando microrganismos patogênicos ingeridos se multiplicam no corpo humano.</button>
+        <button data-correct="false">4. As infecções alimentares são causadas por toxinas produzidas por microrganismos, enquanto as intoxicações alimentares resultam da ingestão de microrganismos vivos.</button>
+        <button data-correct="true">5. As infecções de origem alimentar são causadas pela ingestão de microrganismos vivos, enquanto as intoxicações são causadas por toxinas microbianas ou naturais presentes nos alimentos.</button>
+    </div>
+
+    <p class="feedback"></p>
+</div>
+
+    <div class="quiz-container">
+    <h2>
+      19-  A obesidade é uma doença caracterizada pelo acúmulo excessivo de gordura corporal, que produz efeitos deletérios à saúde. Há um consenso na literatura de que sua etiologia é multifatorial. Os macrodeterminantes sociais da obesidade envolvem vários fatores socioeconômicos e culturais.
+        <br><br>
+        Fonte: MONTERO-LOPEZ, M. et al. Determinantes sociais da saúde e prevalência de sobrepeso-obesidade em mulheres urbanas, segundo nível socioeconômico. Hacia promoc. Salud, [S.l.], v. 26, n.2, p. 192-207, 2021.
+        <br><br>
+        Considerando o apresentado, assinale a alternativa que reflete corretamente um desses fatores:
+    </h2>
+    
+    <div class="answers">
+        <button data-correct="false">1. A globalização aumentou o tempo disponível para a preparação de refeições caseiras, reduzindo a dependência de alimentos ultraprocessados.</button>
+        <button data-correct="false">2. A padronização da alimentação provocada pela globalização resultou na preservação das dietas tradicionais e na redução do consumo de alimentos industrializados.</button>
+        <button data-correct="false">3. A expansão das oportunidades de emprego para mulheres não afeta o tempo disponível para a preparação de alimentos, resultando em uma dieta mais variada e saudável.</button>
+        <button data-correct="false">4. A mecanização do trabalho e a substituição de refeições tradicionais por alimentos ultraprocessados levaram ao aumento da atividade física, compensando o menor gasto energético.</button>
+        <button data-correct="true">5. A introdução de novas tecnologias e meios de transporte mecanizados contribui para uma redução do gasto energético e um aumento na dependência de alimentos ultraprocessados.</button>
+    </div>
+
+    <p class="feedback"></p>
+</div>
+
+    <div class="quiz-container">
+    <h2>
+      20-  O controle sanitário de alimentos é uma competência constitucional do Sistema Único de Saúde (SUS), exercido por meio das ações de vigilância sanitária. A Vigilância Sanitária dos Alimentos desempenha um papel crucial na garantia da segurança alimentar. Ela coordena várias atividades para assegurar a qualidade dos alimentos e bebidas (Uchida, 2023).
+        <br><br>
+        Fonte: UCHIDA, N. S. Elementos da Saúde Pública. Indaial, SC: Arqué, 2023.
+        <br><br>
+        Conforme o texto, analise as sentenças a seguir:
+        <br><br>
+        I. A Vigilância Sanitária dos Alimentos se concentra apenas na inspeção e fiscalização dos alimentos e não estabelece normas para rotulagem ou aditivos alimentares.<br>
+        II. A Política Nacional de Alimentação e Nutrição (PNAN) inclui diretrizes para o controle e a regulação de alimentos, alinhando-se com a Segurança Alimentar e Nutricional.<br>
+        III. A Vigilância Sanitária dos Alimentos é responsável por garantir a qualidade de uma ampla gama de produtos, incluindo aditivos alimentares e resíduos de medicamentos veterinários.
+        <br><br>
+        É correto o que se afirma em:
+    </h2>
+    
+    <div class="answers">
+        <button data-correct="false">1. I, apenas.</button>
+        <button data-correct="false">2. II, apenas.</button>
+        <button data-correct="false">3. III, apenas.</button>
+        <button data-correct="false">4. I e II, apenas.</button>
+        <button data-correct="true">5. II e III, apenas.</button>
+    </div>
+
+    <p class="feedback"></p>
+</div>
+
+
+<!-- Quiz sobre cálculo de compras para salada de cenoura -->
+<div class="quiz-container">
+
+<button class="print-btn" onclick="window.print()">Imprimir Quiz</button>
 
     <script>
-        function checkAnswer(button, isCorrect) {
-            const allButtons = button.closest('.answers').querySelectorAll('button');
+        function checkAnswer(button) {
+            const answerContainer = button.closest('.answers');
+            const quizContainer = button.closest('.quiz-container');
+            const isCorrect = button.getAttribute('data-correct') === 'true';
+            const allButtons = answerContainer.querySelectorAll('button');
+            const correctButton = answerContainer.querySelector('button[data-correct="true"]');
+            const feedback = quizContainer.querySelector('.feedback');
+
             allButtons.forEach(btn => {
                 btn.disabled = true;
                 btn.classList.remove('correct', 'incorrect');
+                if (btn === correctButton) {
+                    btn.classList.add('correct');
+                }
             });
 
-            const feedback = button.closest('.quiz-container').querySelector('.feedback');
-            feedback.style.display = 'block';
-
+            feedback.classList.add('visible');
             if (isCorrect) {
-                button.classList.add('correct');
                 feedback.textContent = "Parabéns, continue assim! Você vai muito bem na prova. 🎉";
                 feedback.classList.add('correct');
                 feedback.classList.remove('incorrect');
             } else {
                 button.classList.add('incorrect');
-                feedback.textContent = "Vamos tentar novamente na próxima. 😔";
+                if (correctButton) {
+                    feedback.innerHTML = `Vamos tentar novamente na próxima. 😔<br>A resposta correta é: <strong>${correctButton.textContent}</strong>`;
+                } else {
+                    feedback.textContent = "Vamos tentar novamente na próxima. 😔";
+                }
                 feedback.classList.add('incorrect');
                 feedback.classList.remove('correct');
             }
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.addEventListener('click', function(event) {
+                if (event.target.matches('.answers button')) {
+                    checkAnswer(event.target);
+                }
+            });
+        });
     </script>
 
 </body>
